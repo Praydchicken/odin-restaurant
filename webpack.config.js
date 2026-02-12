@@ -9,6 +9,9 @@ export default {
 		path: path.resolve(import.meta.dirname, 'dist'),
 		clean: true,
 	},
+ 	devServer: {
+    watchFiles: ['src/template.html'],
+  },
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/template.html'

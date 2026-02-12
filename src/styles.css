@@ -1,6 +1,72 @@
 @import url('minireset.css');
 @import url('./styles/fonts.css');
 
+:root {
+	--clr-bg:        #1C1208;
+  --clr-surface:   #2A1C0E;
+  --clr-card:      #3A2614;
+  --clr-accent:    #C8843A;
+  --clr-accent-lt: #E8A85A;
+  --clr-cream:     #F5E6C8;
+  --clr-text:      #EDE0C4;
+  --clr-muted:     #8C7355;
+  --clr-border:    rgba(200,132,58,0.25);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Lora', Georgia, serif;
+
+  --font-size-sm: 1rem;
+  --font-size-md: 1.5rem;
+
+  --radius-sm:  6px;
+  --radius-md:  14px;
+  --radius-lg:  24px;
+
+  --shadow-warm: 0 8px 32px rgba(200,132,58,0.15);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.45);
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.2rem 5vw;
+	background-color: var(--clr-bg);
+	border-bottom: 1px solid var(--clr-border);
+}
+
+.navbar__logo {
+	font-size: var(--font-size-md);
+	color: var(--clr-accent);
+}
+
+.navbar__logo span {
+	color: var(--clr-text);
+}
+
+.navbar__links {
+	display: flex;
+	gap: 2.5rem;
+}
+
+.navbar__links button {
+	cursor: pointer;
+	border: none;
+	color: var(--clr-muted);
+	background:none;
+	font-family: var(--font-body);
+	font-size: var(--font-size-sm);
+	letter-spacing: 0.2em;
+}
+
+.navbar__links button.active {
+	color: var(--clr-accent-lt);
+}
+
+.navbar__links button:hover {
+	color: var(--clr-accent-lt);
+}
+
+
 body {
-	background-color: darkkhaki;
+	background-color: black;
 }
