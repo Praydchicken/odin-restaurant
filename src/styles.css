@@ -1,4 +1,5 @@
 @import url('minireset.css');
+@import url('./styles/fonts.css');
 
 body {
 	background-color: darkkhaki;
