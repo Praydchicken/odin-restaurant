@@ -16,31 +16,31 @@ const pages = {
 
 const setActivePage = (id) => {
 	if (id === currentActivePage) {
-      return;
-  }
-
-  currentActivePage = id;
-
-	document.querySelectorAll('.navbar__links button').forEach(btn => {
-		btn.classList.remove('active');
-	})
-
-	document.querySelector(`#${id}`).classList.add('active');
-	content.innerHTML = '';
-
-	content.append(pages[id]());
-}
-
-const handleNavButtons = (event) => {
-	const button = event.target.closest('button');
-
-	if (!button) {
 		return;
 	}
 
-	setActivePage(button.id);
+	currentActivePage = id;
+
+	document.querySelectorAll('.navbar__links button').forEach(btn => {
+		btn.classList.toggle('active', btn.dataset.link === id);
+	})
+
+	content.innerHTML = '';
+
+	content.append(pages[id]());
 };
 
-navigation.addEventListener('click', handleNavButtons);
+const handleRouting = (event) => {
+	const trigger = event.target.closest('[data-link]');
+
+	if (!trigger) {
+		return;
+	}
+
+	setActivePage(trigger.dataset.link);
+};
+
+navigation.addEventListener('click', handleRouting);
+content.addEventListener('click', handleRouting);
 
 setActivePage('home');
