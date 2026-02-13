@@ -3,15 +3,15 @@ import home from './js/home.js';
 import menu from './js/menu.js';
 import about from './js/about.js';
 
-const content = document.querySelector('#content');
-const navigation = document.querySelector('.navbar__links');
+const content = document.getElementById('content');
+const navigation = document.getElementById('navigation');
 
 let currentActivePage = null;
 
 const pages = {
-	home: () => home(),
-	menu: () => menu(),
-	about: () => about(),
+	home,
+	menu,
+	about,
 };
 
 const setActivePage = (id) => {
@@ -21,13 +21,11 @@ const setActivePage = (id) => {
 
 	currentActivePage = id;
 
-	document.querySelectorAll('.navbar__links button').forEach(btn => {
+	navigation.querySelectorAll('[data-link]').forEach(btn => {
 		btn.classList.toggle('active', btn.dataset.link === id);
 	})
 
-	content.innerHTML = '';
-
-	content.append(pages[id]());
+	content.replaceChildren(pages[id]());
 };
 
 const handleRouting = (event) => {
@@ -37,7 +35,11 @@ const handleRouting = (event) => {
 		return;
 	}
 
-	setActivePage(trigger.dataset.link);
+	const targetPage = trigger.dataset.link;
+
+	if (pages[targetPage]) {
+		setActivePage(targetPage);
+	}
 };
 
 navigation.addEventListener('click', handleRouting);
