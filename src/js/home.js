@@ -1,8 +1,8 @@
 const home = () => {
-	const home = document.createElement('section');
-	home.classList.add('hero');
+	const view = document.createElement('section');
+	view.classList.add('hero');
 
-	home.innerHTML = `
+	view.innerHTML = `
 		<div>
 			<div class="hero__eyebrow">
 			 	Est. 2019 · Specialty Coffee
@@ -14,7 +14,7 @@ const home = () => {
 			<button class="hero__cta" data-link="menu">Explore the Menu</button>
 		</div>`;
 
-	return home;
+	return view;
 }
 
 export default home;
