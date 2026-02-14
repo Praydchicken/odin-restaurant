@@ -155,7 +155,7 @@ main {
 	margin-bottom: 4rem;
 }
 
-.menu__label {
+.menu__eyebrow {
 	color: var(--clr-accent);
 	font-size: 1rem;
 	letter-spacing: 0.2em;
@@ -198,17 +198,19 @@ main {
 
 .card__header {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	margin-block-end: 0.8rem;
 }
 
 .card__title {
 	color: var(--clr-cream);
-	font-size: 1.15rem;
+	font-size: 0.95rem;
 }
 
 .card__price {
 	color: var(--clr-accent);
+	font-size: 1.15rem;
 }
 
 .card__content {

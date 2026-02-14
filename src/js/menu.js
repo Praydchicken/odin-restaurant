@@ -63,7 +63,7 @@ const menu = () => {
 	view.innerHTML = `
 		<div>
 			<div class="menu__header">
-				<p class="menu__label">What We Serve</p>
+				<p class="menu__eyebrow">What We Serve</p>
 				<h2 class="menu__title">The <em>Menu</em></h2>
 				<div class="divider"></div>
 				<p class="menu__description">Sourced with care,crafted with intention</p>
